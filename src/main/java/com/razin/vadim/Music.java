@@ -1,2 +1,5 @@
-package com.razin.vadim;public interface Music {
+package com.razin.vadim;
+
+public interface Music {
+    String getSong();
 }
