@@ -9,7 +9,7 @@ public class MusicPlayer {
     private int volume;
     private List<Music> musicList = new ArrayList<>();
 
-    public MusicPlayer() {
+        public MusicPlayer() {
     }
 
     public MusicPlayer(Music music) {
