@@ -7,6 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="classicalMusicBean"
           class="com.razin.vadim.ClassicalMusic">
@@ -18,7 +19,7 @@
           class="com.razin.vadim.RapMusic">
     </bean>
 
-    <bean id="musicPlayer" class="com.razin.vadim.MusicPlayer">
+    <bean id="musicPlayer" class="com.razin.vadim.MusicPlayer" scope="prototype">
         <property name="musicList">
                 <list>
                     <ref bean="classicalMusicBean"/>
@@ -26,6 +27,7 @@
                     <ref bean="rapMusicBean"/>
                 </list>
         </property>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
