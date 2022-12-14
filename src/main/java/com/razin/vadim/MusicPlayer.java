@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
 public class MusicPlayer {
 
     private Music classicalMusic;
@@ -27,7 +26,6 @@ public class MusicPlayer {
         return volume;
     }
 
-    @Autowired
     public MusicPlayer(
             @Qualifier("classicalMusic") Music classicalMusic,
             @Qualifier("rockMusic") Music rockMusic) {

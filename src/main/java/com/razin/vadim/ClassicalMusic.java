@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
+
 public class ClassicalMusic implements Music {
     @PostConstruct
     public void doMyInit() {
