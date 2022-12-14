@@ -2,23 +2,22 @@ package com.razin.vadim;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 @Component
-public class ClassicalMusic implements Music{
-    private ClassicalMusic() {}
+public class ClassicalMusic implements Music {
+    private List<String> songs = new ArrayList<>();
 
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
+    {
+        songs.add("Hungarian Rhapsody");
+        songs.add("Bethoven sonata 2");
+        songs.add("Mozart sonata 5");
+    }
+    @Override
+    public List<String> getSongs() {
+        return songs;
     }
 
-    public String getSong() {
-        return "Hungarian Phapsody";
-    }
-
-    public void doMyInit() {
-        System.out.println("Doing my initialization");
-    }
-
-    public void doMyDestroy() {
-        System.out.println("Doing my destruction");
-    }
 }
