@@ -10,37 +10,15 @@ import java.util.List;
 import java.util.Random;
 
 public class MusicPlayer {
+    private List<Music> musicGenres;
 
-    private Music classicalMusic;
-    private Music rockMusic;
-    @Value("${musicPlayer.name}")
-    private String name;
-    @Value("${musicPlayer.volume}")
-    private int volume;
-
-    public String getName() {
-        return name;
+    public MusicPlayer(List<Music> genreList) {
+        musicGenres = genreList;
     }
 
-    public int getVolume() {
-        return volume;
-    }
-
-    public MusicPlayer(
-            @Qualifier("classicalMusic") Music classicalMusic,
-            @Qualifier("rockMusic") Music rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-    }
-
-    public void playMusic(MusicGenres genre) {
+    public void playMusic() {
         Random random = new Random();
         int randomNumber = random.nextInt(3);
-        if (genre == MusicGenres.ROCK) {
-            System.out.println("Playing: " + rockMusic.getSongs().get(randomNumber));
-        } else if (genre == MusicGenres.CLASSICAL) {
-            System.out.println("Playing: " + classicalMusic.getSongs().get(randomNumber));
-        }
-        else System.out.println("Wrong genre");
+        System.out.println(musicGenres.get(randomNumber).getSong());
     }
 }

@@ -11,25 +11,10 @@ import java.util.Random;
 
 
 public class ClassicalMusic implements Music {
-    @PostConstruct
-    public void doMyInit() {
-        System.out.println("Doing my initialization");
-    }
 
-    @PreDestroy
-    public void doMyDestroy() {
-        System.out.println("Doing my destroy");
-    }
-    private List<String> songs = new ArrayList<>();
-
-    {
-        songs.add("Hungarian Rhapsody");
-        songs.add("Bethoven sonata 2");
-        songs.add("Mozart sonata 5");
-    }
     @Override
-    public List<String> getSongs() {
-        return songs;
+    public String getSong() {
+        return "Hungarian Rhapsody";
     }
 
 
